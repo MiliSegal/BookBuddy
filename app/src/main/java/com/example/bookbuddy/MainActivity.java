@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Swipe swipe;
     private ArrayList<BookModel> booksList = new ArrayList<>();
     private ImageView bookCoverImageView;
 
