@@ -47,4 +47,5 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.13.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.13.0")
     implementation ("com.android.volley:volley:1.2.1")
+    implementation ("com.lorentzos.swipecards:library:1.0.9")
 }
