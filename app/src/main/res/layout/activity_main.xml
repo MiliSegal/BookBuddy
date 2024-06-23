@@ -1,134 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp" >
 
-    <LinearLayout
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BookBuddy"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/bookCoverImageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/donut"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/bookId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Book name:"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/bookName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/authorId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Author:"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/authorName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/desId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Description:"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/desName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="77dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <!--            android:src="@tools:sample/avatars" -->
-
-        <ImageView
-            android:id="@+id/search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <!--            android:src="@tools:sample/avatars" />-->
-
-        <ImageView
-            android:id="@+id/posts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <!--            android:src="@tools:sample/avatars" />-->
-
-        <ImageView
-            android:id="@+id/chats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <!--            android:src="@tools:sample/avatars" />-->
-
-        <ImageView
-            android:id="@+id/userProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <!--            android:src="@tools:sample/avatars" />-->
-    </LinearLayout>
-
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 </LinearLayout>
