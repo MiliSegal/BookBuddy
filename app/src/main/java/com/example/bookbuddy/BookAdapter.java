@@ -60,6 +60,12 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         return books.length();
     }
 
+    public void deleteItem(int position) {
+        books.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, books.length());
+    }
+
     public static class BookViewHolder extends RecyclerView.ViewHolder {
 
         TextView titleTextView, authorTextView, descriptionTextView;

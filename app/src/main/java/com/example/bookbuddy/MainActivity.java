@@ -3,6 +3,8 @@ package com.example.bookbuddy;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -43,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
                             books = response.getJSONArray("works");
                             bookAdapter = new BookAdapter(MainActivity.this, books);
                             viewPager.setAdapter(bookAdapter);
+
+                            // Set up ItemTouchHelper
+                            ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeToDeleteCallback(bookAdapter));
+                            itemTouchHelper.attachToRecyclerView((RecyclerView) viewPager.getChildAt(0));
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
