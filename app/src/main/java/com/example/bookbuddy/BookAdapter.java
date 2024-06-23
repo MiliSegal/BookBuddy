@@ -1,5 +1,4 @@
-// BookAdapter.java
-package com.example.bookbuddy;
+package com.example.bookbuddy;// BookAdapter.java
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,20 +10,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bookbuddy.R;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder> {
 
     private JSONArray books;
     private Context context;
+    private List<Integer> swipedPositions;
 
     public BookAdapter(Context context, JSONArray books) {
         this.context = context;
         this.books = books;
+        this.swipedPositions = new ArrayList<>();
     }
 
     @NonNull
@@ -36,6 +41,13 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull BookViewHolder holder, int position) {
+        if (swipedPositions.contains(position)) {
+            // Skip binding swiped books
+            holder.itemView.setVisibility(View.GONE);
+            holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+            return;
+        }
+
         try {
             JSONObject book = books.getJSONObject(position);
             String title = book.getString("title");
@@ -62,6 +74,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
 
     public void deleteItem(int position) {
         books.remove(position);
+        swipedPositions.add(position); // Add swiped position to the list
         notifyItemRemoved(position);
         notifyItemRangeChanged(position, books.length());
     }
