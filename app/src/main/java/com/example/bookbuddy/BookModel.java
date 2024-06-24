@@ -1,47 +1,32 @@
 package com.example.bookbuddy;
 
 public class BookModel {
-    private String name;
+
+    private String title;
     private String author;
-    private String coverImageUrl; // String to store cover image URL
-    private String summary;
+    private String description;
+    private int imageResId;
 
-    public BookModel(String name, String author, String coverImageUrl, String summary) {
-        this.name = name;
+    public BookModel(String title, String author, String description, int imageResId) {
+        this.title = title;
         this.author = author;
-        this.coverImageUrl = coverImageUrl;
-        this.summary = summary;
+        this.description = description;
+        this.imageResId = imageResId;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public String getTitle() {
+        return title;
     }
 
     public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public String getDescription() {
+        return description;
     }
 
-    public String getCoverImageUrl() {
-        return coverImageUrl;
-    }
-
-    public void setCoverImageUrl(String coverImageUrl) {
-        this.coverImageUrl = coverImageUrl;
-    }
-
-    public String getSummary() {
-        return summary;
-    }
-
-    public void setSummary(String summary) {
-        this.summary = summary;
+    public int getImageResId() {
+        return imageResId;
     }
 }

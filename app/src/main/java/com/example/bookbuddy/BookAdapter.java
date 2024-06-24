@@ -1,28 +1,22 @@
 package com.example.bookbuddy;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import androidx.core.content.ContextCompat;
 import com.squareup.picasso.Picasso;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.List;
 
 public class BookAdapter extends BaseAdapter {
 
     private Context context;
-    private List<JSONObject> books;
+    private List<BookModel> books;
 
-    public BookAdapter(Context context, List<JSONObject> books) {
+    public BookAdapter(Context context, List<BookModel> books) {
         this.context = context;
         this.books = books;
     }
@@ -53,28 +47,14 @@ public class BookAdapter extends BaseAdapter {
         TextView descriptionTextView = convertView.findViewById(R.id.desName);
         ImageView bookCoverImageView = convertView.findViewById(R.id.bookCoverImageView);
 
-        try {
-            JSONObject book = books.get(position);
-            String title = book.getString("title");
-            String author = book.getString("author");
-            String description = book.getString("description");
+        BookModel book = books.get(position);
 
-            titleTextView.setText(title);
-            authorTextView.setText(author);
-            descriptionTextView.setText(description);
+        titleTextView.setText(book.getTitle());
+        authorTextView.setText(book.getAuthor());
+        descriptionTextView.setText(book.getDescription());
 
-            if (book.has("cover_id") && !book.isNull("cover_id")) {
-                String coverId = book.getString("cover_id");
-                String imageUrl = "http://covers.openlibrary.org/b/id/" + coverId + "-L.jpg";
-                Log.d("BookAdapter", "Loading image URL: " + imageUrl);
-                Picasso.get().load(imageUrl).into(bookCoverImageView);
-            } else {
-                bookCoverImageView.setImageResource(R.drawable.donut); // Placeholder image
-                Log.d("BookAdapter", "Cover ID not available");
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        // Use Picasso to load the drawable image resource
+        Picasso.get().load(book.getImageResId()).into(bookCoverImageView);
 
         return convertView;
     }
