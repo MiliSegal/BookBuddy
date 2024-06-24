@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_marginLeft="10dp"
-    android:layout_marginTop="50dp"
+    android:layout_marginTop="70dp"
     android:layout_marginRight="10dp"
-    android:layout_marginBottom="80dp"
+    android:layout_marginBottom="100dp"
     app:cardCornerRadius="30dp"
     app:cardElevation="20dp">
 
@@ -20,7 +20,7 @@
         <ImageView
             android:id="@+id/bookCoverImageView"
             android:layout_width="match_parent"
-            android:layout_height="395dp"
+            android:layout_height="379dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/donut" />
 
@@ -75,6 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="50px"
+            android:layout_marginRight="30px"
             android:orientation="vertical">
 
             <TextView
