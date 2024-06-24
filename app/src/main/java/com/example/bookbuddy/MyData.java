@@ -11,7 +11,7 @@ public class MyData {
             "Harriet and Wyn are the perfect couple - they go together like bread and butter, gin and tonic, Blake Lively and Ryan Reynolds. Every year, they take a holiday from their lives to drink far too much wine with their favourite people in the world."};
 
     static Integer[] drawableArray = {R.drawable.wing, R.drawable.roses, R.drawable.seven,
-            R.drawable.see, R.drawable.seven, R.drawable.glass, R.drawable.happyplace};
+            R.drawable.see, R.drawable.glass, R.drawable.happyplace};
 
     static String[] authorArray = {
             "Rebecca Yarros",
